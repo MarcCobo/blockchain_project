@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(name = "/response")
+@RequestMapping("/response")
 public class ResponseController {
 
     @Autowired
@@ -27,8 +27,17 @@ public class ResponseController {
     }
 
     @PostMapping("/create")
+    @CrossOrigin
     public Response createResponse(@RequestBody Response response) {
         return service.createResponse(response);
     }
+
+    @PostMapping("/{question_id}")
+    @CrossOrigin
+    public List<Response> getResponsesByQuestionId(@PathVariable long id) {
+        return service.getResponsesByQuestionId(id);
+    }
+
+
 }
 
