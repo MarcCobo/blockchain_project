@@ -19,6 +19,7 @@ public class Question {
     private String question;
 
     @OneToMany(mappedBy = "question")
+    @JsonIgnore
     List<Response> responses;
 
     @OneToMany(mappedBy = "question")

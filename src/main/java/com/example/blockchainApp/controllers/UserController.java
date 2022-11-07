@@ -8,31 +8,30 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/user")
+@CrossOrigin
 public class UserController {
 
     @Autowired
     UserService service;
 
-    @PostMapping("/user")
+    @PostMapping("/create")
     public User createUser(@RequestBody User user) {
         return service.createUser(user);
     }
 
-    @GetMapping("/allUsers")
-    @CrossOrigin
+    @GetMapping("/all_users")
     public List<User> getAllUsers() {
         return service.getAllUsers();
     }
 
-    @GetMapping("{id}")
-    @CrossOrigin
+    @GetMapping("/{id}")
     public User getUserById(@PathVariable long id) {
         return service.getUserById(id);
     }
 
     @GetMapping("/check_email")
-    @CrossOrigin
-    public String emailExists(String email){
+    public String emailExists(@RequestParam(name = "email") String email){
         return service.emailExists(email);
     }
 }
