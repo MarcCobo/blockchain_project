@@ -3,6 +3,7 @@ package com.example.blockchainApp.models;
 
 import jakarta.persistence.*;
 
+@Entity
 @Table(name = "users")
 public class User {
 
@@ -11,9 +12,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column
-    private String vertical;
-    @Column
-    private String question;
+    private String email;
 
     public long getId() {
         return id;
@@ -23,26 +22,17 @@ public class User {
         this.id = id;
     }
 
-    public String getVertical() {
-        return vertical;
+    public String getEmail() {
+        return email;
     }
 
-    public void setVertical(String vertical) {
-        this.vertical = vertical;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
-    public User(long id, String vertical, String question) {
+    public User(long id, String email) {
         this.id = id;
-        this.vertical = vertical;
-        this.question = question;
+        this.email = email;
     }
 
     public User() {
@@ -52,8 +42,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", vertical='" + vertical + '\'' +
-                ", question='" + question + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
