@@ -13,10 +13,6 @@ public class UserController {
     @Autowired
     UserService service;
 
-    private boolean validateUser(User user) {
-        return true;
-    }
-
     @PostMapping("/user")
     public User createUser(@RequestBody User user) {
         return service.createUser(user);
