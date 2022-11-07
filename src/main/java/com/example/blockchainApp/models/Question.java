@@ -22,6 +22,10 @@ public class Question {
     @JsonIgnore
     List<Response> responses;
 
+    @OneToMany(mappedBy = "question")
+    @JsonIgnore
+    List<UserResponse> userResponses;
+
     public Question() {
     }
 

@@ -1,7 +1,10 @@
 package com.example.blockchainApp.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -13,6 +16,10 @@ public class User {
     private long id;
     @Column
     private String email;
+
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    List<UserResponse> userResponses;
 
     public long getId() {
         return id;

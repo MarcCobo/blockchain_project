@@ -1,6 +1,9 @@
 package com.example.blockchainApp.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "responses")
@@ -15,6 +18,10 @@ public class Response {
     private Question question;
     @Column
     private String response;
+
+    @OneToMany(mappedBy = "response")
+    @JsonIgnore
+    List<UserResponse> userResponses;
 
     public Response() {
     }
