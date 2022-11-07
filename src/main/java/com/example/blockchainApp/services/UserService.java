@@ -29,12 +29,13 @@ public class UserService {
 
     @Transactional
     public String emailExists(String email) {
-        if (email != null) {
+        if (email.isEmpty()) return "empty string";
+        if (email.toLowerCase().matches("^([a-z])(\\w+)@([a-z]+)\\.([a-z]+)$")) {
             User user = repository.findUserByEmail(email);
             if (user != null) {
                 return email;
             }
-        }
+        } else return "wrong email format";
         return null;
     }
 
