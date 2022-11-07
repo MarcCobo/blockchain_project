@@ -25,17 +25,17 @@ public class UserResponseService {
     }
 
     @Transactional
-    public List<UserResponse> getALlUserResponseByQuestionId(Long questionId){
+    public List<UserResponse> getAllUserResponseByQuestionId(Long questionId){
         return repository.findByQuestionId(questionId).iterator().next();
     }
 
     @Transactional
-    public List<UserResponse> getALlUserResponseByResponseId(Long responseId){
+    public List<UserResponse> getAllUserResponseByResponseId(Long responseId){
         return repository.findByResponseId(responseId).iterator().next();
     }
 
     @Transactional
-    public List<UserResponse> getALlUserResponseByUserId(Long userId){
+    public List<UserResponse> getAllUserResponseByUserId(Long userId){
         return repository.findByUserId(userId).iterator().next();
     }
 }
