@@ -68,3 +68,4 @@ insert into responses (question_id, response) values ( 6, 'Fusce lacus purus, al
 insert into responses (question_id, response) values ( 17, 'Donec dapibus. Duis at velit eu est congue elementum.');
 insert into responses (question_id, response) values ( 4, 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.');
 insert into responses (question_id, response) values ( 14, 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.');
+insert into users(email) values ('test@test.com')
