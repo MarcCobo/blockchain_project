@@ -23,6 +23,23 @@ public class UserResponse {
     @JoinColumn(name = "response_id")
     private Response response;
 
+    public UserResponse(long id, Question question, User user, Response response) {
+        this.id = id;
+        this.question = question;
+        this.user = user;
+        this.response = response;
+    }
+
+    public UserResponse(Question question, User user, Response response) {
+        this.question = question;
+        this.user = user;
+        this.response = response;
+    }
+
+    public UserResponse() {
+    }
+
+
     public long getId() {
         return id;
     }
@@ -55,15 +72,6 @@ public class UserResponse {
         this.response = response;
     }
 
-    public UserResponse(long id, Question question, User user, Response response) {
-        this.id = id;
-        this.question = question;
-        this.user = user;
-        this.response = response;
-    }
-
-    public UserResponse() {
-    }
 
     @Override
     public String toString() {

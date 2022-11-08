@@ -25,6 +25,11 @@ public class UserResponseService {
     }
 
     @Transactional
+    public UserResponse save(UserResponse userResponse){
+        return repository.save(userResponse);
+    }
+
+    @Transactional
     public List<UserResponse> getAllUserResponseByQuestionId(Long questionId){
         return repository.findByQuestionId(questionId).iterator().next();
     }

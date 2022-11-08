@@ -15,7 +15,7 @@ public class QuestionController {
     @Autowired
     QuestionService service;
 
-    @GetMapping("/get_all")
+    @PostMapping("/get_all")
     public List<Question> getAllQuestions(){
         return service.getAllQuestions();
     }
