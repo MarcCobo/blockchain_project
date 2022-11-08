@@ -28,6 +28,9 @@ const Question = () => {
         user_id: 1
       })
       .then((response) => {
+        for(let i = 0; i < questions[counter].responses.length; i++){
+          document.getElementById(questions[counter].responses[i].id).checked = false
+        }
         let newCounter = counter + 1;
         setCounter(newCounter);
       });
@@ -46,7 +49,7 @@ const Question = () => {
               <Form.Check
                 className="mt-2"
                 label={response.response}
-                name="response"
+                name={questions[counter].question}
                 type="radio"
                 onClick={changeRadioButtonHandler}
                 key={index}
