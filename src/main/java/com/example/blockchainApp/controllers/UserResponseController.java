@@ -50,5 +50,10 @@ public class UserResponseController {
         return service.save(new UserResponse(question, user, response));
     }
 
+    @PostMapping("/get_user_responses")
+    public List<UserResponse> getUserResponseByUserId(@RequestBody long id) {
+        return service.getAllUserResponseByUserId(id);
+    }
+
 
 }
