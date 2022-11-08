@@ -5,10 +5,12 @@ import com.example.blockchainApp.models.Response;
 import com.example.blockchainApp.repositories.QuestionRepository;
 import com.example.blockchainApp.repositories.ResponseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
 public class ResponseService {
     @Autowired
     ResponseRepository repository;

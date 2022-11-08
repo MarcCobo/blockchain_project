@@ -15,6 +15,7 @@ public class Response {
     private long id;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "question_id")
+    @JsonIgnore
     private Question question;
     @Column
     private String response;

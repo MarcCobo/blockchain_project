@@ -18,8 +18,7 @@ public class Question {
     @Column
     private String question;
 
-    @OneToMany(mappedBy = "question")
-    @JsonIgnore
+    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
     List<Response> responses;
 
     @OneToMany(mappedBy = "question")
@@ -57,6 +56,14 @@ public class Question {
 
     public void setQuestion(String question) {
         this.question = question;
+    }
+
+    public List<Response> getResponses() {
+        return responses;
+    }
+
+    public void setResponses(List<Response> responses) {
+        this.responses = responses;
     }
 
     @Override

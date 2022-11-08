@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/response")
+@RequestMapping("/user_response")
 @CrossOrigin
 public class UserResponseController {
 
@@ -25,18 +25,5 @@ public class UserResponseController {
         return service.getAllUserResponseById(id);
     }
 
-    @GetMapping("/{question_id}")
-    public List<UserResponse> getUserResponseByQuestionId(@PathVariable long id){
-        return service.getAllUserResponseByQuestionId(id);
-    }
 
-    @GetMapping("/{question_id}")
-    public List<UserResponse> getUserResponseByResponseId(@PathVariable long id){
-        return service.getAllUserResponseByResponseId(id);
-    }
-
-    @GetMapping("/{question_id}")
-    public List<UserResponse> getUserResponseByUserId(@PathVariable long id){
-        return service.getAllUserResponseByUserId(id);
-    }
 }
