@@ -46,8 +46,8 @@ public class UserResponseController {
         System.out.println(userResponse);
         Question question = questionService.getQuestionsById(userResponse.getQuestion_id());
         Response response = responseService.getResponsesById(userResponse.getResponse_id());
-        User user = userService.getUserById(userResponse.getId());
-        return service.save(new UserResponse(1, question, user, response));
+        User user = userService.getUserById(userResponse.getUser_id());
+        return service.save(new UserResponse(question, user, response));
     }
 
 
